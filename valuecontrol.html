@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function CalculatorValue() {
+            var strValue = "";
+            var intCount = 0;
+            strValue = window.document.frmValueControl.txtValue.value;
+            // strValue 라는 변수에 오른쪽 값 할당
+            // strValue는 String 객체입니다. 
+            intCount = strValue.length;
+            
+            if (!strValue) {
+                window.alert("입력해주세요");
+            }
+            else if (intCount < 6) {
+                window.alert("6글자 이상 입력해주세요.")                
+            }
+        }
+    </script>
+</head>
+<body>
+    <div align="center">
+        <h1>값 제어하기</h1>
+        <form action="" name="frmValueControl">
+            <table border="1">
+                <tr>
+                    <td>
+                        입력
+                    </td>
+                    <td colspan="2">
+                        <input type="text" size="15" name="txtValue">
+                    </td>
+                </tr>
+                <tr align="center">
+                    <td colspan="3">
+                        <input type="button" name="cmdValue" value="계산" onclick="CalculatorValue();">
+                        <input type="reset" name="cmdClear" value="취소">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
