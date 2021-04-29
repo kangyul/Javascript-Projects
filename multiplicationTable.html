@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>구구단 찍기</title>
+        <script>
+            function printGugudan() {
+                // table head
+                document.write('<table border="1" align="center">');
+                document.write('<thead>');
+                document.write('<tr>');
+                for (var i=2; i<=9; i++) {
+                    document.write('<th>' + (i) + '단 </th>');
+                }
+                document.write('</tr>');
+                document.write('</thead>');
+
+                document.write('<tbody>');
+
+                for (var i=1; i<=9; i++) {
+                    document.write('<tr>');
+                    for (var j=2; j<=9; j++) {
+                        document.write('<td>' + j + " * " + i + " = " + (j*i) + '</td>');
+                    }
+                    document.write('</tr>');
+                }
+                document.write('</tbody>');
+                document.write("</table>");
+            }
+
+        </script>
+    </head>
+    <body>
+        <div align="center">
+            <input type="button" value="구구단 출력" onclick="printGugudan();">
+        </div>
+    </body>
+</html>
