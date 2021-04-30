@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>document.getElementsByTagName()</title>
+        <script>
+            function change() {
+                var spanArray = document.getElementsByTagName("span");
+                for(var i=0; i<spanArray.length; i++) {
+                    var span = spanArray[i];
+                    span.style.color = "skyblue";
+                    span.style.font = "20px";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h3>My favorite Fruit <button onclick="change()">Click</button> </h3>
+        <hr>
+        I like red <span>apples</span> so I eat every day.
+        When I am exercising I eat <span>banana</span> time to time.
+        It makes me strong by absorbing carbs. I also like <span>cherry</span> and
+        <span>prune</span>.
+    </body>
+</html>

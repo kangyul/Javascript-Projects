@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title></title>
+        <script>
+            function calc(cBox) {
+                var sum1 = 0;
+               
+                if(cBox.checked) {
+                     sum1 = sum1 + parseInt(cBox.value);
+                }
+                else {
+                    sum1 = sum1 - parseInt(cBox.value);
+                }
+                document.getElementById("sumtext").value = sum1;
+            }
+
+            function calc2() {
+                var sum2 = 0;
+                var cBox2 = window.document.frmEx2.product;
+                for(i=0; i<cBox2.length; i++) {
+                    if(cBox2[i].checked) {
+                        sum += parseInt(cBox2[i].value);
+                    }
+                }
+                window.document.frmEx2.sumtext2.value = sum2;
+            }
+        </script>
+    </head>
+    <body>
+        <h3>물품을 선택하면 금액이 자동 계산됩니다.</h3>
+        <hr>
+        <p>this와 getElementById를 이용한 계산</p>
+        <form name="frmEx">
+            <input type="checkbox" name="hat" value="10000" onclick="calc(this);"> 모자 1만원
+            <input type="checkbox" name="shoes" value="30000" onclick="calc(this);"> 구두 3만원
+            <input type="checkbox" name="bag" value="80000" onclick="calc(this);"> 명품가방 8만원 <br>
+            지불하실 금액 <input type="text" id="sumtext" value="0">
+        </form>
+            <br><br><br><br><br><br><p>Name을 이용한 계산</p>
+        <form name="frmEx2">
+            <input type="checkbox" name="product" value="10000"> 모자 1만원
+            <input type="checkbox" name="product" value="30000"> 구두 3만원
+            <input type="checkbox" name="product" value="80000"> 명품가방 8만원 <br>
+            지불하실 금액 <input type="text" id="sumtext2" value="0">
+            <input type="button" onclick="calc2()" value="계산하기">
+        </form>
+
+        
+    </body>
+</html>

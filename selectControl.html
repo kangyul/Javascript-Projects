@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title></title>
+        <script>
+            function selCalcu() {
+                var objSel = window.document.frmEx.sel;
+                var intCount = objSel.selectedIndex;
+                var strData = objSel.options[intCount].value;
+                alert(intCount);
+                alert(strData);
+                if(intCount==0) {
+                    alert("Select Fruits!");
+                }
+                else {
+                    window.document.frmEx.txtData.value = strData;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form action="" name="frmEx">
+            <select name="sel" id="" onchange="selCalcu()">
+                <option value="None">Please select Fruits!</option>
+                <option value="Apple">Apple</option>
+                <option value="Grapes">Grapes</option>
+                <option value="Tangerine">Tangerine</option>
+                <option value="Mango">Mango</option>
+            </select><br>
+            <input type="text" name="txtData" size="12">
+        </form>
+    </body>
+</html>
