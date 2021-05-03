@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title></title>
+        <script>
+            function addItem() {
+                var frm = document.form1;
+                var cnt = frm.sel1.options.length;
+                var arrData = new Array(cnt);
+
+                for (var i=0; i<cnt; i++) {
+                    if(frm.sel1.options[i].selected) {
+                        arrData[i] = frm.sel1.options[i].text + " : " + frm.sel1.options[i].value;
+                        window.alert(arrData[i]);
+                    } 
+                }
+
+            }
+        </script>
+    </head>
+    <body>
+        <form action="" name="form1" method="">
+            <table border="1" align="center">
+                <tr>
+                    <td width="200" align="center">
+                        <select name="sel1" size="10" id="" style="width: 100%;" multiple>
+                            <option value="1">멀티설랙트1</option>
+                            <option value="2">멀티설랙트2</option>
+                            <option value="3">멀티설랙트3</option>
+                            <option value="4">멀티설랙트4</option>
+                            <option value="5">멀티설랙트5</option>
+                            <option value="6">멀티설랙트6</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        <input type="button" value="계산하기" onclick="addItem();">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
