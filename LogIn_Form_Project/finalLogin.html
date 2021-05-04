@@ -1,0 +1,136 @@
+<html>
+    <head>
+        <title></title>
+        <script>
+            var text = "";
+            function checkAddress() {
+                var add = document.getElementById("address");
+                for (var i=0; i<add.length; i++) {
+                    if (add[i].checked) {
+                        text += add[i] + "\n";
+                    }
+                }
+            }
+
+            function printInfo() {
+                var u_name = document.getElementById("user_name");
+                var u_bday = document.getElementById("user_bday");
+                var u_id = document.getElementById("user_id");
+                var u_pwd = document.getElementById("user_pwd");
+
+                if (!u_name.value) {
+                    alert("이름을 입력하세요!");
+                    u_name.focus();
+                }
+                else if(!isNaN(u_name.value)) {
+                    alert("이름은 문자로 입력해주세요!");
+                    u_name.focus();
+                }
+                else if(!u_bday.value) {
+                    alert("생년월일을 입력하세요!");
+                    u_bday.focus();
+                }
+                else if(!u_id.value) {
+                    alert("아이디를 입력하세요!");
+                    u_id.focus();
+                }
+                else if(!u_pwd.value) {
+                    alert("패스워드를 입력하세요!");
+                    u_pwd.focus();
+                }
+                else if (u_id.value.length < 6 || u_id.value.length > 8) {
+                    alert("아이디는 6~8자만 가능합니다.");
+                    u_id.focus();
+                }
+                else if(u_pwd.value.length < 8) {
+                    alert('비밀번호는 8자이상만 가능합니다.');
+                    u_pwd.focus();
+                }
+                else {
+                    text = u_name.value + "\n";
+                    text += u_bday.value + "\n";
+                    text += u_id.value + "\n";
+                    text += u_pwd.value + "\n";
+
+                    document.getElementById("result").value = text;
+                }
+            }
+
+            function checkSports(obj) {
+
+
+            }
+
+            
+        </script>
+    </head>
+    <body>
+        <div align="center">
+            <h1>회원가입 폼</h1>
+        </div>
+        <div>
+            <form action="">
+                <table border="1" align="center">
+                    <tr>
+                        <td>이름</td>
+                        <td><input type="text" id="user_name"></td>
+                    </tr>
+                    <tr>
+                        <td>생년월일</td>
+                        <td><input type="date" id="user_bday"></td>
+                    </tr>
+                    <tr>
+                        <td>아이디</td>
+                        <td><input type="text" id="user_id"></td>
+                    </tr>
+                    <tr>
+                        <td>비밀번호</td>
+                        <td><input type="password" id="user_pwd"></td>
+                    </tr>
+                    <tr>
+                        <td>성별</td>
+                        <td>
+                            <input type="radio" name="gender" value="Male"> Male
+                            <input type="radio" name="gender" value="Female"> Female
+                            <input type="radio" name="gender" value="N/A"> N/A      
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>좋아하는 운동</td>
+                        <td>
+                            <input type="checkbox" value="soccer"> 축구
+                            <input type="checkbox" value="baseball"> 야구
+                            <input type="checkbox" value="basektball"> 농구
+                            <input type="checkbox" value="volleyball"> 배구
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>주소</td>
+                        <td>
+                            <select name="" id="address" onchange="checkAddress()">
+                                <option value="주소를 입력하세요">주소를 입력하세요</option>
+                                <option value="Seoul">서울특별시</option>
+                                <option value="Gyeongido">경기도</option>
+                                <option value="Chungcungdo">충청도</option>
+                                <option value="Gangwondo">강원도</option>
+                                <option value="Jungrado">전라도</option>
+                                <option value="Gyeongsangdo">경상도</option>
+                                <option value="Jejudo">제주도</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr align="center">
+                        <td colspan="2">
+                            <input type="button" value="출력하기" onclick="printInfo()">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <textarea name="" id="result" cols="30" rows="10"></textarea>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </body>
+</html>
